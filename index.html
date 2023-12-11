@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritance Booking</title>
+    <link rel="stylesheet" href="./main.css" type="text/css">
+</head>
+<body>
+    <!--navigation bar-->
+<header id="header">
+    <!--adding the logo-->
+  
+   <!--Navigation Bar--> 
+   <section class="logo">
+       <a href="Heritance Kandalama.html"><img class="logo" src="./logo2.png" alt="Heritance Hotel Kandalama logo" width="100px"></a>
+   </section>
+   
+   <nav>
+    <ul class="navlinks">
+        <li><a href="Heritance Kandalama.html">Home</a></li>
+        <li><a href="Branches.html">Branches</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="Dining.html">Dining</a></li>
+        <li><a href="Adventures.html">Adventures</a></li>
+    </ul>
+</nav>
+<a class="book" a href="./booking.html" ><button>Book Now!</button></a>
+    <section class="menubtn">
+        <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+    </section>
+    <section class="dropdown_menu">
+        <li><a href="Heritance Kandalama.html">Home</a></li>
+        <li><a href="Branches.html">Branches</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="Dining.html">Dining</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="Adventures.html">Adventures</a></li>
+        <li><a class="book" a href="./booking.html" ><button>Book Now!</button></a></li>
+    </section>
+       <script>
+           const menu_btn = document.querySelector('.menubtn')
+           const menubtnICON = document.querySelector('.menu_btn input')
+           const dropmenu = document.querySelector('.dropdown_menu')
+
+           menu_btn.onclick = function(){
+               dropmenu.classList.toggle('open')
+               const isOpen = dropmenu.classList.contains('open')
+           }
+       </script>
+  </header>
+
+<body>
+    <br>
+    <br>
+    <h1>BOOK YOUR PERFECT GETAWAY</h1>
+
+    <h2> Your gateway to an unforgettable experience amidst the lush landscapes of Sri Lanka. </h2>
+<br>
+
+<div class="container">
+    <form id="personalInfoForm">
+      <h2>Personal Information</h2>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </form>
+</div>  
+
+    <section id="gallerynav">
+        <button id="nav" class="centered-button" onclick="scrollToSection('roomBookingForm')">ROOM BOOKING</button>
+        <button id="nav" class="centered-button" onclick="scrollToSection('adventureBookingForm')">ADVENTURE BOOKING</button>
+    </section>
+
+
+ 
+
+  
+      
+        <h2>Room Booking</h2>
+<section id="roomBookingForm">
+    <div class="container">
+    <!-- Form Container -->
+        <div class="form-container">
+            <form id="roomBookingForm">
+                
+              
+        
+                <label for="checkin" id="checkinLabel">Check-In : </label>
+                <input type="date" id="checkin" name="checkin" required>
+            
+                <label for="checkout" id="checkoutLabel">Check-Out : </label>
+                <input type="date" id="checkout" name="checkout" required onchange="updateTable()">
+
+        
+                <label for="numSingleRooms">Number of Single Rooms:</label>
+                <input type="number" id="numSingleRooms" name="numSingleRooms" min="0" required>
+        
+                <label for="numDoubleRooms">Number of Double Rooms:</label>
+                <input type="number" id="numDoubleRooms" name="numDoubleRooms" min="0" required>
+        
+                <label for="numTripleRooms">Number of Triple Rooms:</label>
+                <input type="number" id="numTripleRooms" name="numTripleRooms" min="0" required>
+        
+                <label for="numAdults">Number of Adults:</label>
+                <input type="number" id="numAdults" name="numAdults" min="1" required>
+        
+                <label for="numChildren">Number of Children:</label>
+                <input type="number" id="numChildren" name="numChildren" min="0" required>
+        
+                <label for="numChildrenAbove5">Number of Children Above Age 5:
+                    <br>
+                    <p>*an extra Rs.5000.00 will be charged for meals*</p>
+                </label>
+                <input type="number" id="numChildrenAbove5" name="numChildrenAbove5" min="0" required>
+        
+                <label for="extraBeds">Number of extra Beds:</label>
+                <input type="number" id="beds" name="beds" min="0" required>
+        
+                <label for="viewType">Type of View:</label>
+                <select id="viewType" name="viewType" required onchange="updateTable()">
+                    <option value="pool">Pool View</option>
+                    <option value="garden">Garden View</option>
+                </select>
+                
+                <label for="otherRequirements">Other Requirements:</label>
+                    <div id="otherRequirements">
+                        <input type="checkbox" id="wifiCheckbox" name="requirements" value="wifi" onclick="updateTable()">
+                        <label for="wifiCheckbox" id="wifiLabel" class="button-style">WiFi</label>
+                    
+                        <input type="checkbox" id="tvCheckbox" name="requirements" value="tv" onclick="updateTable()">
+                        <label for="tvCheckbox" id="tvLabel" class="button-style">TV</label>
+                    
+                        <input type="checkbox" id="fridgeCheckbox" name="requirements" value="fridge" onclick="updateTable()">
+                        <label for="fridgeCheckbox" id="fridgeLabel" class="button-style">Mini-Fridge</label>
+                    
+                        <input type="checkbox" id="bathtubCheckbox" name="requirements" value="bathtub" onclick="updateTable()">
+                        <label for="bathtubCheckbox" id="bathtubLabel" class="button-style">Bathtub</label>
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+                
+                    <div class="promo-code">
+                        <label for="promoCode">Enter Promo Code:</label>
+                        <input type="text" id="promoCode" placeholder="Enter code">
+                        <button onclick="applyPromoCode(event)">Apply</button>
+                    </div>
+                
+            </form>
+        </div>
+        
+            
+        
+            <!-- Display Table for Recorded Details -->
+        <div class="table_container"> 
+            <div class="recorded-details">
+                        
+                    <table id="currentRoomBookings">
+                    
+           
+                        
+
+                        <!--days-->
+                        <tr>
+                            <th>Current Booking</th>
+                            <th>Current Booking Cost</th>
+                        </tr>
+                        <tr>
+                            <td>Duration of Stay (Day(s))</td>
+                            <td id="duration">0</td>
+                        </tr>
+
+                        <tr>
+                            <td>Check-In Date</td>
+                            <td id="checkinDate">-</td>
+                        </tr>
+                        <tr>
+                            <td>Check-Out Date</td>
+                            <td id="checkoutDate">-</td>
+                        </tr>
+
+                        <tr>
+                            <td>Single Room</td>
+                            <td id="singleCost">Rs.0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Double Room</td>
+                            <td id="doubleCost">Rs.0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Triple Room</td>
+                            <td id="tripleCost">Rs.0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Adults</td>
+                            <td id="numAdultsCost">0</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Children</td>
+                            <td id="numChildrenCost">0</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Children (above five years)</td>
+                            <td id="numChildrenAbove5Cost">0</td>
+                        </tr>
+                        <tr>
+                            <td>Cost of Extra Beds</td>
+                            <td id="extraBedsCost">Rs. 0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Cost for Kids above 5 years</td>
+                            <td id="kidsAbove5Cost">Rs.0.00</td>
+                        </tr>
+                    
+            
+                        <!-- Room View -->
+                        <tr>
+                            <td>Room View</td>
+                            <td id="roomView">View Not Selected</td>
+                        </tr>
+                        <tr>
+                            <td>Other Requirements</td>
+                            <td id="otherRequirementsCost">No Requirements</td>
+                        </tr>
+
+                        <tr>
+                            <td>Promo Code</td>
+                            <td id="promoApplied">No</td>
+                        </tr>
+                
+                        <tr>
+                            <td>Total</td>
+                            <td id="totalCost">Rs. 0.00</td>
+                        </tr>
+                        
+
+                       
+                    </table>
+
+    
+                
+                        
+                    </div>
+        
+            </div>
+        </div>  
+
+
+        <div class="loyalty-points">
+            <button id="loyal" onclick="checkLoyalty()">Check Loyalty Points</button>
+            <p id="loyaltyPointsDisplay">Earned Loyalty Points: 0</p>
+        </div>
+        
+       
+        <br>
+        <br>
+        
+        <div class="buttoncontainer">
+            <button id="favbtn">Add To Favorites</button>       <button id="nowbtn" onclick="bookNow(); scrollToSection('overallBookingTable')">BOOK NOW</button>
+
+
+            
+                
+           
+        </div>
+
+
+        <br>
+        
+                
+    
+
+
+<!--ADVENTURE BOOKING-.............................................................................................................-->
+        
+
+
+<h2>Adventure Booking</h2>
+<section id="adventureBookingForm">
+    <div class="container">
+        <!-- Form Container -->
+        <div class="form-container">
+            <form id="adventureBookingForm">
+                <!-- Existing adventure booking form fields -->
+
+
+
+                <h2>Diving</h2>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" min="1" required>
+
+
+                <label for="numDivingHours">Number of Hours:</label>
+                <input type="number" id="numDivingHours" name="numDivingHours" min="1" required>
+                
+                <label for="numDivingAdults">Number of Adults:</label>
+                <input type="number" id="numDivingAdults" name="numDivingAdults" min="0" required>
+
+                <label for="numDivingChildren">Number of Children:</label>
+                <input type="number" id="numDivingChildren" name="numDivingChildren" min="0" required>
+
+               
+                <label for="needGuide">Do you need a guide for adults?</label>
+                <select id="needGuide" name="needGuide" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="needGuideChild">Do you need a guide for children?</label>
+                <select id="needGuideChild" name="needGuideChild" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <!-- Display Table for Recorded Details -->
+    <div class="table_container">
+        <div class="recorded-details">
+            <table id="currentAdventureBookings">
+                <!-- Existing adventure booking table -->
+                
+                <label for="nationality">Nationality:</label>
+                <select id="nationality" name="nationality" required>
+                    <option value="sriLankan">Sri Lankan</option>
+                    <option value="other">Other</option>
+                </select>
+                <!-- Diving Costs -->
+
+                <!---->
+
+                
+                
+                <h4>Initial Diving Costs for Sri Lankan Adults: </h4> <p id="initialDivingCostSriLankanAdults">Rs. 5000.00</p>
+                <h4>Initial Diving Costs for Sri Lankan Children: </h4> <p id="initialDivingCostSriLankanChildren">Rs. 2000.00</p>
+                <h4>Initial Diving Costs for Other Nationals Adults: </h4> <p id="initialDivingCostOtherAdults">Rs. 10000.00</p>
+                <h4>Initial Diving Costs for Other Nationals Children: </h4> <p id="initialDivingCostOtherChildren">Rs. 5000.00</p>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td id="Date">-</td>
+                </tr>
+                
+                <tr>
+                    <td>Number of Diving Adults</td>
+                    <td id="numDivingAdultsCost">Rs. 0.00</td>
+                </tr>
+                <tr>
+                    <td>Number of Diving Children</td>
+                    <td id="numDivingChildrenCost">Rs. 0.00</td>
+                </tr>
+            
+                <!-- Guide Charges -->
+                <tr>
+                    <td>Guide Charges</td>
+                    <td id="guideCharges">Rs. 0.00</td>
+                </tr>
+            
+                <tr>
+                    <td>Guide Charges (For Children)</td>
+                    <td id="guideChargesChild">Rs. 0.00</td>
+                </tr>
+                <tr>
+                    <td>Total Cost</td>
+                    <td id="totalCostAv">Rs. 0.00</td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<div class="buttoncontainer">
+    <button id="advbtn">BOOK ADVENTURES</button>
+</div>
+<br>
+<br>
+
+
+
+
+<!--Overall-->
+
+<br>
+<br>
+
+
+<div id="bookingSummary">
+    <table id="overallBookingTable">
+        <h1>Your Overall Booking Summary</h1>
+        <thead>
+            <tr>
+                <th>Booking Number</th>
+              
+                <th>Check-In Date</th>
+                <th>Check-Out Date</th>
+                <th>Single Room</th>
+                <th>Double Room</th>
+                <th>Triple Room</th>
+                <th>Cost for extra beds</th>
+                <th>Cost for Children above 5</th>
+                <th>Room View</th>
+                <th>Other requirements</th>
+                <th>Promo Code</th>
+                <th>Total</th>
+
+
+
+
+
+
+
+            </tr>
+        </thead>
+        <tbody id="overallBookingTableBody">
+          <!-- Existing or dynamically added booking rows go here -->
+        </tbody>
+      </table>
+</div>
+
+
+
+<br>
+<br>
+<br>
+
+<footer>
+    <section class="row">
+        <section class="col">
+            <img src="./logo2.png" alt="logo of heritance" class="footlogo">
+            <p>An unparalleled portfolio of impeccably designed hotels in destinations rich in heritage, inheritance and natural beauty. From golden beaches to emerald hills, the Heritance experience awaits guests with an eager embrace of warmth and hospitality.</p>
+        </section>
+        <section class="col">
+            <h3>Main Office<section class="underline" id="glound"><span></span></section></h3>
+            
+            Heritance Kandalama
+            Dambulla - Kandalama Road,
+            Kandalama, Dambulla,
+            Sri Lanka
+            <H4 class="email-id">info@heritancehotels.com</H4>
+        </section>
+    <p>&copy; 2023 Heritance Kandalama. All rights reserved. | Contact: contact@yourwebsite.com</p>
+</footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
