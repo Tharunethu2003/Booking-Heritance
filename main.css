@@ -98,7 +98,6 @@
     backdrop-filter: blur(5px);
     font-family: 'Times New Roman', Times, serif;
     border: none;
-    border-radius: px;
     padding: 10px;
     font-size: 20px;
     transition: all 0.3s ease 0s;
@@ -171,7 +170,6 @@
   }
   .dropdown_menu li{
     padding: 0.7rem;
-    padding: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -200,7 +198,6 @@
     --c: rgb(255, 255, 255); /* pata pata */
     
     height: var(--s);
-    aspect-ratio: 1;
     border: none;
     padding: 0;
     border-inline: calc(var(--s)/2) solid #0000; 
@@ -375,7 +372,7 @@ h1{
   background-color: var(--orangish);
   font-family: 'Times New Roman', Times, serif;
   opacity: 0.9;
-  padding: 0.5;
+  padding: 0.5px;
   font-size:xx-large;
   
 }
@@ -386,7 +383,7 @@ h2{
   background-color: var(--orangish);
   font-family: 'Times New Roman', Times, serif;
   opacity: 0.9;
-  padding: 0.5;
+  padding: 0.5px;
   font-size:xx-large;
 }
 
